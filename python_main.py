@@ -1,13 +1,14 @@
-from python import insertion_sort, merge_sort, quick_sort, selection_sort, shell_sort, bubble_sort, bucket_sort, comb_sort
+from python import insertion_sort, merge_sort, quick_sort, selection_sort, shell_sort, bubble_sort, bucket_sort, comb_sort, radix_sort
 from python.util import util
 
 def main():
-    array_original = [45, 3, -2, 55, 1, 0, 5, 89, 78, 2, 9, 8, 4, 79, 85, 99, 100, 101]
+    array_original = [10, -5, 5, 55, 23, 0, -1, 8, 99, 34, 56, 67, 3, 58, -9]
     choice: int
 
     while (True):
         array = array_original[:]
         getting_input = True
+        is_new_array = 'Y'
         print_menu()
 
         while getting_input:
@@ -15,17 +16,19 @@ def main():
                 choice = int(input('Enter choice: '))
             except:
                 print("Enter a valid input...")
+                continue
 
-            if choice in range(10):
+            if choice in range(12):
                 getting_input = False
 
 
         if choice == 0:
             break
 
-        print(array)
-        is_new_array = input('Do you want you use this array? (y/N): ')
-
+        if choice != 9:
+            print(array)
+            is_new_array = input('Do you want you use this array? (y/N): ')
+        
         if is_new_array == 'N':
             array = util.get_input()
             array_original = array[:]
@@ -46,6 +49,8 @@ def main():
             bubble_sort.run(array)
         elif choice == 8:
             comb_sort.run(array)
+        elif choice == 9:
+            radix_sort.run()
 
 
 def print_menu():
@@ -60,6 +65,8 @@ def print_menu():
     [7] BUBBLE SORT
     [8] COMB SORT
     [9] RADIX SORT
+    [10] MIN HEAP
+    [11] MAX HEAP
     ''')
 
 
