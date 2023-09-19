@@ -1,6 +1,6 @@
 from binarytree import Node
 from colorama import Fore
-from util import custom_print, colored_array_print
+from python.util.util import custom_print, colored_array_print
 
 
 root: Node
@@ -67,6 +67,7 @@ def build_max_heap(array: list):
         max_heapify(array, i)
         print('<------------------------------------------->')
 
+
     global root
     print('\n')
     colored_array_print("FINAL MAX HEAP TREE", Fore.BLUE, False)
@@ -74,6 +75,10 @@ def build_max_heap(array: list):
     print(root)
 
 
-array = [10, 20, 15, 12, 40, 25, 18]
-build_max_heap(array)
-print(array)
+def run():
+    array = [15, 33, 45, 9, 7, 2, 5, 85, 23, 1, 10, 99, 3, 67, 22, 6]
+    build_max_heap(array)
+    colored_array_print("FINAL MAX HEAP SORT", Fore.GREEN, False)
+    print()
+    colored_array_print(array, Fore.RED)
+    print()
