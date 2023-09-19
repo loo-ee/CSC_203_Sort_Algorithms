@@ -27,6 +27,7 @@ def find_right(parent_index: int):
 
 
 def max_heapify(array: list, parent_index: int):
+    global root
     left = find_left(parent_index)
     right = find_right(parent_index)
 
@@ -50,11 +51,15 @@ def max_heapify(array: list, parent_index: int):
         custom_print(array, [array[largest]], [])
         print()
 
-        global root
         root = Node(array[0])
         construct_heap(array, 0, root)
         print(root)
         max_heapify(array, largest)
+    else:
+        root = Node(array[0])
+        construct_heap(array, 0, root)
+        print(root)
+
 
 
 def build_max_heap(array: list):
@@ -70,15 +75,31 @@ def build_max_heap(array: list):
 
     global root
     print('\n')
-    colored_array_print("FINAL MAX HEAP TREE", Fore.BLUE, False)
+    colored_array_print("CURRENT MAX HEAP TREE", Fore.BLUE, False)
     print()
+    print('Found max element: ', array[0])
     print(root)
+    print('\n\n******************************************************************************\n')
+
+
+def max_heap_sort(array: list, sorted_array: list):
+    arr_last_index = len(array) -1
+
+    max_el = array[0] 
+    sorted_array.append(max_el)
+    array[0] = array[arr_last_index]
+    del array[arr_last_index]
 
 
 def run():
     array = [15, 33, 45, 9, 7, 2, 5, 85, 23, 1, 10, 99, 3, 67, 22, 6]
-    build_max_heap(array)
+    sorted_array = []
+
+    while len(array) != 0:
+        build_max_heap(array)
+        max_heap_sort(array, sorted_array)
+
     colored_array_print("FINAL MAX HEAP SORT", Fore.GREEN, False)
     print()
-    colored_array_print(array, Fore.RED)
+    colored_array_print(sorted_array, Fore.RED)
     print()
