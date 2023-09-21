@@ -1,5 +1,6 @@
 import math
-from util.util import custom_print
+from colorama import Fore
+from util.util import custom_print, colored_array_print
  
 
 def __insertion_sort(array: list):
@@ -12,6 +13,9 @@ def __insertion_sort(array: list):
         forward_ptr = i
         key = array[forward_ptr]
         backward_ptr = forward_ptr - 1
+
+        colored_array_print("PASS " + str(i), Fore.YELLOW, False)
+        print()
 
         while backward_ptr >= 0 and array[backward_ptr] > key:
             swap = True
@@ -41,5 +45,6 @@ def __insertion_sort(array: list):
 
 def run(array: list):
     print('Array before sorting: ', array)
+    print()
     __insertion_sort(array)
     print('Array after sorting: ', array)

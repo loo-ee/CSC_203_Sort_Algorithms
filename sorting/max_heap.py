@@ -61,7 +61,6 @@ def __max_heapify(array: list, parent_index: int):
         print(root)
 
 
-
 def __build_max_heap(array: list):
     count = 0
     mid_arr = int((len(array) // 2) - 1)
@@ -94,8 +93,14 @@ def __max_heap_sort(array: list, sorted_array: list):
 def run():
     array = [15, 33, 45, 9, 7, 2, 5, 85, 23, 1, 10, 99, 3, 67, 22, 6]
     sorted_array = []
+    iterations = 0
 
     while len(array) != 0:
+        iterations += 1
+
+        colored_array_print("PASS " + str(iterations), Fore.YELLOW, False)
+        print()
+
         __build_max_heap(array)
         __max_heap_sort(array, sorted_array)
 

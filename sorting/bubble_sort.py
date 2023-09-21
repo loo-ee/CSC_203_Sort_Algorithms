@@ -1,4 +1,5 @@
-from util.util import custom_print
+from colorama import Fore
+from util.util import custom_print, colored_array_print
 
 
 def __bubble_sort(array: list):
@@ -8,7 +9,9 @@ def __bubble_sort(array: list):
     for i in range(arr_len + 1):
         sorted = True
 
-        print('\nPASS ', i + 1, ': ')
+        print()
+        colored_array_print("PASS " + str(i+1), Fore.YELLOW, False)
+        print()
 
         for j in range(arr_len - 1):
             el1 = array[j]
@@ -28,7 +31,9 @@ def __bubble_sort(array: list):
                 print('\t', el1, ' is less than ', el2, ', no swap needed')
 
         if sorted:
-            print('\nARRAY IS NOW SORTED')
+            print()
+            colored_array_print("ARRAY IS NOW SORTED", Fore.GREEN, False)
+            print()
             break
     
 def run(array: list):

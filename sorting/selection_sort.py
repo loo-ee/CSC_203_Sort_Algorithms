@@ -22,5 +22,7 @@ def __selection_sort(array: list):
 
 def run(array: list):
     print('Array before sorting: ', array)
+    print()
     __selection_sort(array)
+    print()
     print('Array after sorting: ', array)

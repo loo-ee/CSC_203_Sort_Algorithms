@@ -10,7 +10,8 @@ def __shell_sort(array: list):
 
     while gap > 0:
         iter_pass += 1
-        print('PASS ', iter_pass)
+        colored_array_print("PASS " + str(iter_pass), Fore.YELLOW, False)
+        print()
 
         for i in range(gap, arr_len):
             temp = array[i]
@@ -32,6 +33,7 @@ def __shell_sort(array: list):
 
 
 def run(array: list):
-    print('Array before sorting: ', array)
+    print('\nArray before sorting: ', array)
+    print()
     __shell_sort(array)
     print('Array after sorting: ', array)

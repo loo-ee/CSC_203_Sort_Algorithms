@@ -65,11 +65,16 @@ def run(array: list):
     visual_tree = Node(tree.value)
 
     for element in array[1:]:
+        print()
+        colored_array_print("INSERTING " + str(element), Fore.YELLOW, False)
+        print()
+
         __insert_to_tree(tree, element)
         __create_visual_tree(tree, visual_tree)
+
         print(visual_tree)
         custom_print(array, [element], [])
-        print('\n')
+        print('\n*****************************************************************')
 
     __create_visual_tree(tree, visual_tree)
     __tree_sort(tree, output_array)

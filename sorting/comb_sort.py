@@ -19,7 +19,10 @@ def __comb_sort(array: list):
             print()
             colored_array_print("USING BUBBLE SORT", Fore.GREEN, False)
         
-        print(f'\nPass {iterations}, Gap: {gap}')
+        print()
+        colored_array_print("PASS " + str(iterations) + ", ", Fore.YELLOW, False)
+        colored_array_print("GAP: " + str(gap), Fore.BLUE, False)
+        print()
 
         i = 0
         while i + gap < len(array):
@@ -34,9 +37,13 @@ def __comb_sort(array: list):
 
             i += 1
 
-    print('\nARRAY IS NOW SORTED')
+    print()
+    colored_array_print("ARRAY IS NOW SORTED", Fore.GREEN, False)
+    print()
+
 
 def run(array: list):
     print('Array before sorting: ', array)
+    print()
     __comb_sort(array)
     print('Array after sorting: ', array)

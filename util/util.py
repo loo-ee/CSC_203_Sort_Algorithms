@@ -1,6 +1,14 @@
 from colorama import Fore, Back, Style, init
 
 
+def find_target():
+    try:
+        target = int(input("Enter target: "))
+        return target
+    except:
+        print("[ERROR] Target must be an integer")
+
+
 def swap(array: list, x_pos: int, y_pos: int):
     temp = array[x_pos]
     array[x_pos] = array[y_pos]

@@ -1,6 +1,10 @@
 from colorama import Fore
-from sorting import insertion_sort, merge_sort, quick_sort, selection_sort, shell_sort, bubble_sort, bucket_sort, comb_sort, radix_sort, max_heap, min_heap, tree_sort
 from util.util import get_input, colored_array_print
+
+from sorting import insertion_sort, merge_sort, quick_sort, selection_sort, shell_sort, bubble_sort, bucket_sort, comb_sort, radix_sort, max_heap, min_heap, tree_sort
+
+from searching import linear_search
+
 
 def main():
     array_original = [10, -5, 5, 55, 23, 0, -1, 8, 99, 34, 56, 67, 3, 58, -9]
@@ -58,10 +62,14 @@ def main():
             min_heap.run()
         elif choice == 12:
             tree_sort.run(array)
+        elif choice == 13:
+            print('Create tournament sort')
+        elif choice == 14:
+            linear_search.run(array)
 
 
 def print_menu():
-    print()
+    print('\n*********************************************************************')
     colored_array_print("SORTING ALGORITHMS", Fore.GREEN, False) 
 
     print('''
@@ -94,7 +102,6 @@ def print_menu():
     [18] TERNARY SEARCH 
     [19] EXPONENTIAL SEARCH
     ''')
-
 
 
 if __name__ == '__main__':

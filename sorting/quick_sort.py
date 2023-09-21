@@ -10,6 +10,9 @@ def __quick_sort(array: list, start: int, end: int, iter_pass: int):
     traversal_ptr = start
     swap_ptr = start
 
+    colored_array_print("PASS " + str(iter_pass), Fore.YELLOW, False)
+    print()
+
     while traversal_ptr < end:
         if array[traversal_ptr] < pivot:
             custom_print(array[start:end + 1], [array[traversal_ptr]], [array[end]])

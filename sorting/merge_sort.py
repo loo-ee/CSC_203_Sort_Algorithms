@@ -58,5 +58,7 @@ def run(array: list):
     iter_pass = 0
 
     print('Array before sorting: ', array)
+    print()
     __merge_sort(array, iter_pass)
+    print()
     print('Array after sorting: ', array)
