@@ -26,7 +26,7 @@ def run(array: list):
     found_index = __linear_search(array, target)
 
     if found_index != -1:
-        colored_array_print("ELEMENT FOUND AT INDEX " + str(found_index), Fore.BLUE, False)
+        colored_array_print("ELEMENT FOUND AT INDEX " + str(found_index), Fore.CYAN, False)
     else:
         colored_array_print("ELEMENT WAS NOT FOUND", Fore.RED, False)
     

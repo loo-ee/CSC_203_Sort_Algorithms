@@ -3,7 +3,7 @@ from util.util import get_input, colored_array_print
 
 from sorting import insertion_sort, merge_sort, quick_sort, selection_sort, shell_sort, bubble_sort, bucket_sort, comb_sort, radix_sort, max_heap, min_heap, tree_sort
 
-from searching import linear_search, binary_search, jump_search, interpolation_search
+from searching import linear_search, binary_search, jump_search, interpolation_search, ternary_search, exponential_search
 
 
 def main():
@@ -72,6 +72,10 @@ def main():
             jump_search.run(array)
         elif choice == 17:
             interpolation_search.run(array)
+        elif choice == 18:
+            ternary_search.run(array)
+        elif choice == 19:
+            exponential_search.run(array)
 
 
 def print_menu():

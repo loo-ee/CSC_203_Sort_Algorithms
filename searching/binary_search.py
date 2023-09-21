@@ -2,7 +2,7 @@ from colorama import Fore
 from util.util import custom_print, colored_array_print, find_target
 from sorting import selection_sort
 
-def __binary_search(array: list, start: int, end: int, target: int):
+def binary_search(array: list, start: int, end: int, target: int):
     if start > end:
         return -1
 
@@ -17,12 +17,12 @@ def __binary_search(array: list, start: int, end: int, target: int):
         custom_print(array, [], array[:start] + array[end +1:], [array[mid]])
         print('-->', array[start:end + 1])
 
-        return __binary_search(array, start, mid - 1, target)
+        return binary_search(array, start, mid - 1, target)
     else:
         custom_print(array, [], array[:start] + array[end +1:], [array[mid]])
         print('-->', array[start:end + 1])
 
-        return __binary_search(array, mid + 1, end, target)
+        return binary_search(array, mid + 1, end, target)
     
 
 def run(array: list):
@@ -33,12 +33,12 @@ def run(array: list):
     selection_sort.run(array)
     target = find_target()
     print()
-    found_index = __binary_search(array, 0, len(array) - 1, target)
+    found_index = binary_search(array, 0, len(array) - 1, target)
     print()
 
     if found_index != -1:
         colored_array_print(
-            "ELEMENT FOUND AT INDEX " + str(found_index), Fore.BLUE, False
+            "ELEMENT FOUND AT INDEX " + str(found_index), Fore.CYAN, False
         )
     else:
         colored_array_print("ELEMENT WAS NOT FOUND", Fore.RED, False)
