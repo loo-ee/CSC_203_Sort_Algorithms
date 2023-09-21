@@ -3,11 +3,11 @@ from util.util import get_input, colored_array_print
 
 from sorting import insertion_sort, merge_sort, quick_sort, selection_sort, shell_sort, bubble_sort, bucket_sort, comb_sort, radix_sort, max_heap, min_heap, tree_sort
 
-from searching import linear_search
+from searching import linear_search, binary_search, jump_search, interpolation_search
 
 
 def main():
-    array_original = [10, -5, 5, 55, 23, 0, -1, 8, 99, 34, 56, 67, 3, 58, -9]
+    array_original = [-9, -12, 10, 15, 14, 7, 2, 6, 4, 11, 1, 0, -2, -5, -7]
     choice: int
 
     while (True):
@@ -66,6 +66,12 @@ def main():
             print('Create tournament sort')
         elif choice == 14:
             linear_search.run(array)
+        elif choice == 15:
+            binary_search.run(array)
+        elif choice == 16:
+            jump_search.run(array)
+        elif choice == 17:
+            interpolation_search.run(array)
 
 
 def print_menu():

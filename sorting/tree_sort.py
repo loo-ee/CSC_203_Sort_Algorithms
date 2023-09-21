@@ -4,15 +4,14 @@ from util.util import custom_print, colored_array_print
 
 
 class __TreeNode:
-
     def __init__(self, value: int):
         self.value = value
         self.left = None
         self.right = None
 
 
-tree: __TreeNode
-visual_tree: Node
+__tree: __TreeNode
+__visual_tree: Node
 
 
 def __insert_to_tree(node: __TreeNode, value: int):
@@ -57,30 +56,30 @@ def __tree_sort(tree: __TreeNode, output_array: list):
 
 
 def run(array: list):
-    global tree
-    global visual_tree
+    global __tree
+    global __visual_tree
     output_array = []
 
-    tree = __TreeNode(array[0])
-    visual_tree = Node(tree.value)
+    __tree = __TreeNode(array[0])
+    __visual_tree = Node(__tree.value)
 
     for element in array[1:]:
         print()
         colored_array_print("INSERTING " + str(element), Fore.YELLOW, False)
         print()
 
-        __insert_to_tree(tree, element)
-        __create_visual_tree(tree, visual_tree)
+        __insert_to_tree(__tree, element)
+        __create_visual_tree(__tree, __visual_tree)
 
-        print(visual_tree)
+        print(__visual_tree)
         custom_print(array, [element], [])
-        print('\n*****************************************************************')
+        print("\n*****************************************************************")
 
-    __create_visual_tree(tree, visual_tree)
-    __tree_sort(tree, output_array)
-    print(visual_tree)
-    print('\n')
+    __create_visual_tree(__tree, __visual_tree)
+    __tree_sort(__tree, output_array)
+    print(__visual_tree)
+    print("\n")
     colored_array_print("FINAL SORTED ARRAY", Fore.BLUE, False)
     print()
     colored_array_print(output_array, Fore.RED)
-    print('\n')
+    print("\n")
