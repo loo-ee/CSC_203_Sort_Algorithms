@@ -1,6 +1,6 @@
 from colorama import Fore
-from python.merge_sort import merge_sort
-from python.util.util import colored_array_print
+from sorting.merge_sort import merge_sort
+from util.util import colored_array_print
 
 def print_buckets(buckets: [[int]]):
     for bucket in buckets:

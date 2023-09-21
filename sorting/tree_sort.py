@@ -1,16 +1,14 @@
 from binarytree import Node
 from colorama import Fore
-from python.util.util import custom_print, colored_array_print
+from util.util import custom_print, colored_array_print
 
 
 class TreeNode:
-    value = None
-    left = None
-    right = None
-
 
     def __init__(self, value: int):
         self.value = value
+        self.left = None
+        self.right = None
 
 
 tree: TreeNode

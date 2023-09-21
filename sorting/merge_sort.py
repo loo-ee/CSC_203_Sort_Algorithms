@@ -1,6 +1,6 @@
 import math
 from colorama import Fore
-from python.util.util import colored_array_print
+from util.util import colored_array_print
 
 
 def merge(parent_array: list, left_array: list, right_array: list, iter_pass: int):

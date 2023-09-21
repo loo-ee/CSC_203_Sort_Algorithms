@@ -1,5 +1,5 @@
 import math
-from python.util.util import custom_print
+from util.util import custom_print
  
 
 def insertion_sort(array: list):

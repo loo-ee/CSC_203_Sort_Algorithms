@@ -1,5 +1,5 @@
 from colorama import Fore
-from python.util.util import colored_array_print 
+from util.util import colored_array_print 
 
 
 def radix_sort(array: list):

@@ -1,4 +1,4 @@
-from python.merge_sort import merge_sort
+from sorting.merge_sort import merge_sort
 
 
 def bucket_sort(array: list):

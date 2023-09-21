@@ -1,6 +1,6 @@
 import math
 from colorama import Fore
-from python.util.util import custom_print, colored_array_print
+from util.util import custom_print, colored_array_print
 
 
 def shell_sort(array: list):

@@ -1,4 +1,4 @@
-from python.util.util import custom_print
+from util.util import custom_print
 
 
 def bubble_sort(array: list):

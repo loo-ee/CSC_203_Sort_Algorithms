@@ -1,4 +1,4 @@
-from python.util.util import custom_print, colored_array_print
+from util.util import custom_print, colored_array_print
 from colorama import Fore
 
 def swap(array: list, x_pos: int, y_pos: int):
