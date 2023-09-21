@@ -1,13 +1,8 @@
-from util.util import custom_print, colored_array_print
+from util.util import custom_print, colored_array_print, swap
 from colorama import Fore
 
-def swap(array: list, x_pos: int, y_pos: int):
-    temp = array[x_pos]
-    array[x_pos] = array[y_pos]
-    array[y_pos] = temp
 
-
-def quick_sort(array: list, start: int, end: int, iter_pass: int):
+def __quick_sort(array: list, start: int, end: int, iter_pass: int):
     if end <= start:
         return
     
@@ -35,14 +30,14 @@ def quick_sort(array: list, start: int, end: int, iter_pass: int):
     print()
 
     if swap_ptr > start:
-        quick_sort(array, start, swap_ptr - 1,  iter_pass)
+        __quick_sort(array, start, swap_ptr - 1,  iter_pass)
     if swap_ptr < end:
-        quick_sort(array, swap_ptr + 1, end, iter_pass)
+        __quick_sort(array, swap_ptr + 1, end, iter_pass)
 
 
 def run(array: list):
     iter_pass = 0
 
     print('Array before sorting: ', array, '\n')
-    quick_sort(array, 0, len(array) -1, iter_pass)
+    __quick_sort(array, 0, len(array) -1, iter_pass)
     print('Array after sorting: ', array)

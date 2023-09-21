@@ -2,7 +2,7 @@ import math
 from util.util import custom_print
  
 
-def insertion_sort(array: list):
+def __insertion_sort(array: list):
     forward_ptr: int
     backward_ptr: int
     array_len = len(array)
@@ -41,5 +41,5 @@ def insertion_sort(array: list):
 
 def run(array: list):
     print('Array before sorting: ', array)
-    insertion_sort(array)
+    __insertion_sort(array)
     print('Array after sorting: ', array)

@@ -1,6 +1,12 @@
 from colorama import Fore, Back, Style, init
 
 
+def swap(array: list, x_pos: int, y_pos: int):
+    temp = array[x_pos]
+    array[x_pos] = array[y_pos]
+    array[y_pos] = temp
+
+
 def get_input():
     input_arr = []
 

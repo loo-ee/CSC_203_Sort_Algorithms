@@ -6,30 +6,30 @@ from util.util import custom_print, colored_array_print
 root: Node
 
 
-def construct_heap(array: list, index, node):
+def __construct_heap(array: list, index, node):
     left = index * 2 + 1
     right = index * 2 +2
 
     if left < len(array):
         node.left = Node(array[left]) 
-        construct_heap(array, left, node.left)
+        __construct_heap(array, left, node.left)
 
     if right < len(array):
         node.right = Node(array[right])
-        construct_heap(array, right, node.right)
+        __construct_heap(array, right, node.right)
 
 
-def find_left(parent_index: int):
+def __find_left(parent_index: int):
     return 2 * parent_index + 1
 
-def find_right(parent_index: int):
+def __find_right(parent_index: int):
     return 2 * parent_index + 2
 
 
-def max_heapify(array: list, parent_index: int):
+def __max_heapify(array: list, parent_index: int):
     global root
-    left = find_left(parent_index)
-    right = find_right(parent_index)
+    left = __find_left(parent_index)
+    right = __find_right(parent_index)
 
     if left < len(array) and array[left] > array[parent_index]:
         largest = left
@@ -52,24 +52,24 @@ def max_heapify(array: list, parent_index: int):
         print()
 
         root = Node(array[0])
-        construct_heap(array, 0, root)
+        __construct_heap(array, 0, root)
         print(root)
-        max_heapify(array, largest)
+        __max_heapify(array, largest)
     else:
         root = Node(array[0])
-        construct_heap(array, 0, root)
+        __construct_heap(array, 0, root)
         print(root)
 
 
 
-def build_max_heap(array: list):
+def __build_max_heap(array: list):
     count = 0
     mid_arr = int((len(array) // 2) - 1)
 
     for i in range(mid_arr, -1, -1):
         count += 1
         print('\nITERATION ', count, ' index: ', i)
-        max_heapify(array, i)
+        __max_heapify(array, i)
         print('<------------------------------------------->')
 
 
@@ -82,7 +82,7 @@ def build_max_heap(array: list):
     print('\n\n******************************************************************************\n')
 
 
-def max_heap_sort(array: list, sorted_array: list):
+def __max_heap_sort(array: list, sorted_array: list):
     arr_last_index = len(array) -1
 
     max_el = array[0] 
@@ -96,8 +96,8 @@ def run():
     sorted_array = []
 
     while len(array) != 0:
-        build_max_heap(array)
-        max_heap_sort(array, sorted_array)
+        __build_max_heap(array)
+        __max_heap_sort(array, sorted_array)
 
     colored_array_print("FINAL MAX HEAP SORT", Fore.GREEN, False)
     print()

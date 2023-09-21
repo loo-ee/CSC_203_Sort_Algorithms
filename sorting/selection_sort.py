@@ -1,14 +1,8 @@
 import math
-from util.util import custom_print
+from util.util import custom_print, swap
 
 
-def swap(array: list, x_pos: int, y_pos: int):
-    temp = array[x_pos]
-    array[x_pos] = array[y_pos]
-    array[y_pos] = temp
-
-
-def selection_sort(array: list):
+def __selection_sort(array: list):
     smallest: int
     swap_index = 0
     arr_len = len(array)
@@ -28,5 +22,5 @@ def selection_sort(array: list):
 
 def run(array: list):
     print('Array before sorting: ', array)
-    selection_sort(array)
+    __selection_sort(array)
     print('Array after sorting: ', array)

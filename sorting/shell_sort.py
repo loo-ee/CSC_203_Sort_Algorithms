@@ -3,7 +3,7 @@ from colorama import Fore
 from util.util import custom_print, colored_array_print
 
 
-def shell_sort(array: list):
+def __shell_sort(array: list):
     arr_len = len(array)
     gap = math.floor(arr_len / 2)
     iter_pass = 0
@@ -33,5 +33,5 @@ def shell_sort(array: list):
 
 def run(array: list):
     print('Array before sorting: ', array)
-    shell_sort(array)
+    __shell_sort(array)
     print('Array after sorting: ', array)

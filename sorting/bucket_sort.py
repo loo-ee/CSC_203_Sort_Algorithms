@@ -1,8 +1,8 @@
 from colorama import Fore
-from sorting.merge_sort import merge_sort
+from sorting.merge_sort import __merge_sort
 from util.util import colored_array_print
 
-def print_buckets(buckets: [[int]]):
+def __print_buckets(buckets: [[int]]):
     for bucket in buckets:
         if len(bucket) != 0:
             print(bucket, end="   ")
@@ -10,7 +10,7 @@ def print_buckets(buckets: [[int]]):
     print()
 
 
-def bucket_sort(array: list):
+def __bucket_sort(array: list):
     min_val = min(array)
     max_val = max(array)
     n = len(array)  
@@ -24,7 +24,7 @@ def bucket_sort(array: list):
     print()
     colored_array_print("SCATTERING", Fore.BLUE, False)
     print()
-    print_buckets(buckets)
+    __print_buckets(buckets)
 
     for bucket in buckets:
         bucket.sort()
@@ -36,12 +36,12 @@ def bucket_sort(array: list):
     print()
     colored_array_print("SORTING", Fore.GREEN, False)
     print()
-    print_buckets(buckets)
+    __print_buckets(buckets)
 
     return sorted_arr
 
 
 def run(array: list):
     print('Array before sorting: ', array)
-    array = bucket_sort(array)
+    array = __bucket_sort(array)
     print('\nArray after sorting: ', array)

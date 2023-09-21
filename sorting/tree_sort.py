@@ -3,7 +3,7 @@ from colorama import Fore
 from util.util import custom_print, colored_array_print
 
 
-class TreeNode:
+class __TreeNode:
 
     def __init__(self, value: int):
         self.value = value
@@ -11,11 +11,11 @@ class TreeNode:
         self.right = None
 
 
-tree: TreeNode
+tree: __TreeNode
 visual_tree: Node
 
 
-def insert_to_tree(node: TreeNode, value: int):
+def __insert_to_tree(node: __TreeNode, value: int):
     tree_ptr = node
     prev_node = None
 
@@ -28,32 +28,32 @@ def insert_to_tree(node: TreeNode, value: int):
             tree_ptr = tree_ptr.left
 
     if value > prev_node.value:
-        prev_node.right = TreeNode(value)
+        prev_node.right = __TreeNode(value)
     else:
-        prev_node.left = TreeNode(value)
+        prev_node.left = __TreeNode(value)
 
 
-def create_visual_tree(tree: TreeNode, visual_tree: Node):
+def __create_visual_tree(tree: __TreeNode, visual_tree: Node):
     if tree is None:
         return
 
     if tree.left is not None:
         visual_tree.left = Node(tree.left.value)
-        create_visual_tree(tree.left, visual_tree.left)
+        __create_visual_tree(tree.left, visual_tree.left)
 
     if tree.right is not None:
         visual_tree.right = Node(tree.right.value)
-        create_visual_tree(tree.right, visual_tree.right)
+        __create_visual_tree(tree.right, visual_tree.right)
 
 
-def tree_sort(tree: TreeNode, output_array: list):
+def __tree_sort(tree: __TreeNode, output_array: list):
     if tree.left is not None:
-        tree_sort(tree.left, output_array)
+        __tree_sort(tree.left, output_array)
 
     output_array.append(tree.value)
 
     if tree.right is not None:
-        tree_sort(tree.right, output_array)
+        __tree_sort(tree.right, output_array)
 
 
 def run(array: list):
@@ -61,18 +61,18 @@ def run(array: list):
     global visual_tree
     output_array = []
 
-    tree = TreeNode(array[0])
+    tree = __TreeNode(array[0])
     visual_tree = Node(tree.value)
 
     for element in array[1:]:
-        insert_to_tree(tree, element)
-        create_visual_tree(tree, visual_tree)
+        __insert_to_tree(tree, element)
+        __create_visual_tree(tree, visual_tree)
         print(visual_tree)
         custom_print(array, [element], [])
         print('\n')
 
-    create_visual_tree(tree, visual_tree)
-    tree_sort(tree, output_array)
+    __create_visual_tree(tree, visual_tree)
+    __tree_sort(tree, output_array)
     print(visual_tree)
     print('\n')
     colored_array_print("FINAL SORTED ARRAY", Fore.BLUE, False)

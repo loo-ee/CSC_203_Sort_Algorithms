@@ -2,7 +2,7 @@ from colorama import Fore
 from util.util import custom_print, colored_array_print
 
 
-def comb_sort(array: list):
+def __comb_sort(array: list):
     gap = len(array)
     shrink_factor = 1.3
     sorted = False
@@ -38,5 +38,5 @@ def comb_sort(array: list):
 
 def run(array: list):
     print('Array before sorting: ', array)
-    comb_sort(array)
+    __comb_sort(array)
     print('Array after sorting: ', array)

@@ -1,7 +1,7 @@
-from sorting.merge_sort import merge_sort
+from sorting.merge_sort import __merge_sort
 
 
-def bucket_sort(array: list):
+def __bucket_sort(array: list):
     buckets = []
     sorted_array = []
     arr_len = len(array)
@@ -17,7 +17,7 @@ def bucket_sort(array: list):
         buckets[el_index].append(array[i])
 
     for i in range(arr_len):
-        merge_sort(buckets[i], 0)
+        __merge_sort(buckets[i], 0)
 
     for i in range(len(buckets)):
         if len(buckets[i]) == 0:
@@ -32,6 +32,6 @@ def bucket_sort(array: list):
 
 def run(array: list):
     print('Array before sorting: ', array)
-    array = bucket_sort(array)
+    array = __bucket_sort(array)
     print('Array after sorting: ', array)
     

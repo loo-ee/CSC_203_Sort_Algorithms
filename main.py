@@ -19,7 +19,7 @@ def main():
                 print("Enter a valid input...")
                 continue
 
-            if choice in range(13):
+            if choice in range(20):
                 getting_input = False
 
 
@@ -62,7 +62,7 @@ def main():
 
 def print_menu():
     print()
-    colored_array_print("SELECT OPERATION", Fore.GREEN, False)
+    colored_array_print("SORTING ALGORITHMS", Fore.GREEN, False) 
 
     print('''
 
@@ -79,7 +79,22 @@ def print_menu():
     [10] MAX HEAP SORT
     [11] MIN HEAP SORT
     [12] TREE SORT
+    [13] TOURNAMENT SORT
     ''')
+
+    print()
+    colored_array_print("SEARCHING ALGORITHMS", Fore.RED, False)
+
+    print('''
+
+    [14] LINEAR SEARCH
+    [15] BINARY SEARCH
+    [16] JUMP SEARCH
+    [17] INTERPOLATION SEARCH
+    [18] TERNARY SEARCH 
+    [19] EXPONENTIAL SEARCH
+    ''')
+
 
 
 if __name__ == '__main__':

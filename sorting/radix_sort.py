@@ -2,7 +2,7 @@ from colorama import Fore
 from util.util import colored_array_print 
 
 
-def radix_sort(array: list):
+def __radix_sort(array: list):
     bins = [[] for _ in range(10)]
     output_arr = []
     max_el = max(array)
@@ -34,7 +34,7 @@ def radix_sort(array: list):
         divisor *= multiplier
 
 
-def get_input():
+def __get_input():
     input_arr = []
 
     while True:
@@ -59,9 +59,9 @@ def run():
     is_new_array = input('Do you want you use this array? (y/N): ')
 
     if is_new_array == 'N':
-        array = get_input()
+        array = __get_input()
 
     print('\nArray before sorting: ', array)
     print()
-    radix_sort(array)
+    __radix_sort(array)
     print('\nArray after sorting: ', array)

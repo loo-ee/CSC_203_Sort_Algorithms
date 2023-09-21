@@ -1,7 +1,7 @@
 from util.util import custom_print
 
 
-def bubble_sort(array: list):
+def __bubble_sort(array: list):
     arr_len = len(array)
     print("Array len: ", arr_len)
 
@@ -33,5 +33,5 @@ def bubble_sort(array: list):
     
 def run(array: list):
     print('Array before sorting: ', array)
-    bubble_sort(array)
+    __bubble_sort(array)
     print('Array after sorting: ', array)
