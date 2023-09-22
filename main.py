@@ -1,7 +1,7 @@
 from colorama import Fore
 from util.util import get_input, colored_array_print
 
-from sorting import insertion_sort, merge_sort, quick_sort, selection_sort, shell_sort, bubble_sort, bucket_sort, comb_sort, radix_sort, max_heap, min_heap, tree_sort
+from sorting import insertion_sort, merge_sort, quick_sort, selection_sort, shell_sort, bubble_sort, bucket_sort, comb_sort, radix_sort, max_heap, min_heap, tree_sort, tournament_sort
 
 from searching import linear_search, binary_search, jump_search, interpolation_search, ternary_search, exponential_search
 
@@ -63,7 +63,7 @@ def main():
         elif choice == 12:
             tree_sort.run(array)
         elif choice == 13:
-            print('Create tournament sort')
+            tournament_sort.run(array)
         elif choice == 14:
             linear_search.run(array)
         elif choice == 15:
