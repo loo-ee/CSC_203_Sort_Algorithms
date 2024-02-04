@@ -32,6 +32,8 @@ def __radix_sort(array: list):
         print(f" -> {divisor}'s place")
 
         divisor *= multiplier
+    
+    return array
 
 
 def __get_input():
@@ -63,5 +65,5 @@ def run():
 
     print('\nArray before sorting: ', array)
     print()
-    __radix_sort(array)
+    array = __radix_sort(array)
     print('\nArray after sorting: ', array)
